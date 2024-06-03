@@ -19,38 +19,71 @@ new Vue({
         ]
     }
 });
-// Example script to handle image click for modal view (if needed)
+// Izveidojam sarakstu, lai saglabātu groza saturu
+var cart = [];
 
-document.addEventListener("DOMContentLoaded", function() {
-    const images = document.querySelectorAll('.gallery-item img');
-    const modal = document.createElement('div');
-    const modalImg = document.createElement('img');
-    
-    modal.style.display = 'none';
-    modal.style.position = 'fixed';
-    modal.style.top = '0';
-    modal.style.left = '0';
-    modal.style.width = '100%';
-    modal.style.height = '100%';
-    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-    modal.style.justifyContent = 'center';
-    modal.style.alignItems = 'center';
-    modal.style.zIndex = '1000';
+// Atrodam visus pogas elementus ar klasi "add-to-cart"
+var addToCartButtons = document.querySelectorAll('.add-to-cart');
 
-    modalImg.style.maxWidth = '90%';
-    modalImg.style.maxHeight = '90%';
+// Pievienojam klausītāju katrai pogai, lai apstrādātu klikšķi
+addToCartButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+        // Atrodam produktu nosaukumu un cenu, kas ir saistīti ar nospiestās pogas produktu
+        var productName = button.parentElement.querySelector('.product-name').innerText;
+        var productPrice = button.parentElement.querySelector('.product-price').innerText;
 
-    modal.appendChild(modalImg);
-    document.body.appendChild(modal);
+        // Izveidojam objektu ar produktu informāciju
+        var product = {
+            name: productName,
+            price: productPrice
+        };
 
-    images.forEach(image => {
-        image.addEventListener('click', function() {
-            modalImg.src = this.src;
-            modal.style.display = 'flex';
-        });
-    });
+        // Pievienojam produktu grozam
+        cart.push(product);
 
-    modal.addEventListener('click', function() {
-        modal.style.display = 'none';
+        // Parādām paziņojumu, ka produkts ir pievienots grozam
+        alert(productName + " pievienots grozam!");
+
+        // Atjaunojam groza sadaļu, lai parādītu jauno produktu sarakstu
+        updateCart();
     });
 });
+
+// Atjaunojam groza sadaļu ar aktuālo groza saturu
+function updateCart() {
+    var cartList = document.getElementById('cart-list');
+
+    // Notīram esošo groza saturu, lai atjaunotu to ar jauno informāciju
+    cartList.innerHTML = '';
+
+    // Pārbaudam, vai grozs ir tukšs
+    if (cart.length === 0) {
+        cartList.innerHTML = '<p>Grozs ir tukšs</p>';
+    } else {
+        // Ja grozs nav tukšs, izvadam katru produktu sarakstā
+        cart.forEach(function(product) {
+            var listItem = document.createElement('li');
+            listItem.textContent = product.name + ' - ' + product.price;
+            cartList.appendChild(listItem);
+        });
+    }
+}
+
+// Atjaunojam maksājuma veidu sarakstu
+function updatePaymentMethods() {
+    var paymentMethodsList = document.getElementById('payment-methods');
+
+    // Notīram esošo maksājuma veidu sarakstu
+    paymentMethodsList.innerHTML = '';
+
+    // Izveidojam jaunus maksājuma veidus un pievienojam tos sarakstam
+    var paymentMethods = ['VISA', 'Mastercard', 'PayPal'];
+    paymentMethods.forEach(function(method) {
+        var listItem = document.createElement('li');
+        listItem.textContent = method;
+        paymentMethodsList.appendChild(listItem);
+    });
+}
+
+// Izsaucam funkciju, lai atjaunotu maksājuma veidu sarakstu, kad lapa ielādējas
+updatePaymentMethods();

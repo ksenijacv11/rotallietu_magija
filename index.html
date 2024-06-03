@@ -8,72 +8,99 @@
 </head>
 <body>
     <header>
-        <img src="images/logo.jpeg" alt="Rotaļlietu Maģija Logo" class="logo">
-        <h1>Rotaļlietu Maģija</h1>
+        <img src="logo.png" alt="Rotaļlietu Maģija logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Sākums</a></li>
+                <li><a href="about.html">Par mani</a></li>
+                <li><a href="shop.html">Veikals</a></li>
+                <li><a href="contact.html">Kontakti</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#par-mums">Par mums</a></li>
-            <li><a href="#galerija">Galerija</a></li>
-            <li><a href="#sazinaties">Kā sazināties ar mani?</a></li>
-            <li><a href="#veikals">Veikals</a></li>
-        </ul>
-    </nav>
+    <main>
+        <section id="cart">
+            <h2>Manu grozs</h2>
+            <ul id="cart-list">
+                <!-- Šeit tiks dinamiski ievietoti produkti no groza JavaScript koda -->
+            </ul>
+            <h2>Maksājuma veidi</h2>
+            <ul id="payment-methods">
+                <li>VISA</li>
+                <li>Mastercard</li>
+                <li>PayPal</li>
+            </ul>
+        </section>
 
-    <section id="par-mums">
-        <h2>Par mums</h2>
-        <p>Sveiki! Mani sauc Ksenija Cvetkova. Mīlestība pret rotaļlietām ir mana dzīves dzinējspēks. "Rotaļlietu Maģija" piedāvā unikālas, mīlestības un radošuma pilnas rotaļlietas, kas radītas, lai iepriecinātu un burvītu mūsu mazos draugus. Paldies, ka Jūs esat!</p>
-    </section>
+        <section id="products">
+            <h2>Produkti</h2>
+            <div class="product">
+                <img src="tilda.jpg" alt="Tiļda rotaļlieta">
+                <h3 class="product-name">Tiļda</h3>
+                <p class="product-price">55€</p>
+                <button class="add-to-cart">Pievienot grozam</button>
+            </div>
+            <div class="product">
+                <img src="puce.jpg" alt="Pūce rotaļlieta">
+                <h3 class="product-name">Pūce</h3>
+                <p class="product-price">35€</p>
+                <button class="add-to-cart">Pievienot grozam</button>
+            </div>
+            <div class="product">
+                <img src="zirafe" alt="Žirafe rotaļlieta">
+                <h3 class="product-name">Žirafe</h3>
+                <p class="product-price">40€</p>
+                <button class="add-to-cart">Pievienot grozam</button>
+            </div>
+            <div class="product">
+                <img src="kakis" alt="Kaķis rotaļlieta">
+                <h3 class="product-name">Kaķis</h3>
+                <p class="product-price">40€</p>
+                <button class="add-to-cart">Pievienot grozam</button>
+            </div>
+            <div class="product">
+                <img src="ods" alt="Ods rotaļlieta">
+                <h3 class="product-name">Ods</h3>
+                <p class="product-price">25€</p>
+                <button class="add-to-cart">Pievienot grozam</button>
+            </div>
+            <div class="product">
+                <img src="lacis" alt="Lācis rotaļlieta">
+                <h3 class="product-name">Lācis</h3>
+                <p class="product-price">25€</p>
+                <button class="add-to-cart">Pievienot grozam</button>
+            </div>
+            <div class="product">
+                <img src="sniegavirs" alt="Sniegavīrs rotaļlieta">
+                <h3 class="product-name">Sniegavīrs</h3>
+                <p class="product-price">60€</p>
+                <button class="add-to-cart">Pievienot grozam</button>
+            </div>
+            <div class="product">
+                <img src="bite" alt="Bite rotaļlieta">
+                <h3 class="product-name">Bite</h3>
+                <p class="product-price">45€</p>
+                <button class="add-to-cart">Pievienot grozam</button>
+            </div>
+            <div class="product">
+                <img src="bernu komplekts" alt="Bērnu komplekts rotaļlieta">
+                <h3 class="product-name">Bērnu komplekts</h3>
+                <p class="product-price">20€</p>
+                <button class="add-to-cart">Pievienot grozam</button>
+            </div>
+            <div class="product">
+                <img src="nilzirgs" alt="Nīlzirgs rotaļlieta">
+                <h3 class="product-name">Nīlzirgs</h3>
+                <p class="product-price">10€</p>
+                <button class="add-to-cart">Pievienot grozam</button>
+            </div>
+        </section>
+    </main>
 
-    <section id="galerija">
-        <h2>Galerija</h2>
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="images.tilde.jpeg" alt="Tiļda">
-            </div>
-            <div class="gallery-item">
-                <img src="images.puce.jpeg" alt="Pūce">
-            </div>
-            <div class="gallery-item">
-                <img src="images.zirafe.jpeg" alt="Žirafe">
-            </div>
-            <div class="gallery-item">
-                <img src="images.kakis.jpeg" alt="Kaķis">
-            </div>
-            <div class="gallery-item">
-                <img src="images.ods.jpeg" alt="Ods">
-            </div>
-            <div class="gallery-item">
-                <img src="images.lacis.jpeg" alt="Lācis">
-            </div>
-            <div class="gallery-item">
-                <img src="images.sniegavirs.jpeg" alt="Sniegavīrs">
-            </div>
-        </div>
-    </section>
-
-    <section id="sazinaties">
-        <h2>Kā sazināties ar mani?</h2>
-        <p>Tel.: +3712200617<br>E-pasts: kse@inbox.lv<br>Instagram: <a href="#">Instagram</a><br>Facebook: <a href="#">Facebook</a></p>
-    </section>
-
-    <section id="veikals">
-        <h2>Veikals</h2>
-        <ul>
-            <li>Tiļda, 50 cm, 55 eiro</li>
-            <li>Pūce, 30 cm, 35 eiro</li>
-            <li>Žirafe, 60 cm, 40 eiro</li>
-            <li>Kaķis, 15 cm, 40 eiro</li>
-            <li>Ods, 35 cm, 25 eiro</li>
-            <li>Lācis, 25 cm, 25 eiro</li>
-            <li>Sniegavīrs, 60 cm, 60 eiro</li>
-            <li>Bite, 25 cm, 45 eiro</li>
-            <li>Bērnu komplekts, 20 eiro</li>
-            <li>Nīlzirgs, 15 cm, 10 eiro</li>
-        </ul>
-    </section>
-
+    <footer>
+        <p>&copy; 2024 Rotaļlietu Maģija. Visas tiesības aizsargātas.</p>
+    </footer>
     <script src="scripts.js"></script>
 </body>
 </html>

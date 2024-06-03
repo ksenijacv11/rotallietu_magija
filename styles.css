@@ -1,73 +1,88 @@
+/* CSS stili */
+
+/* Vispārīgi stili */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 header {
-    background-color: #f4f4f4;
+    background-color: #f8f8f8;
     padding: 20px;
     text-align: center;
-    position: relative;
 }
 
-header .logo {
-    width: 100px;
-    height: auto;
-    position: absolute;
-    top: 20px;
-    left: 20px;
+header h1 {
+    margin: 0;
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
-    text-align: center;
-    background-color: #333;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin-right: 20px;
 }
 
-nav ul li a {
-    color: rgba(255, 255, 255, 0.822);
-    text-decoration: none;
-}
-
-section {
+main {
     padding: 20px;
-    margin: 20px 0;
 }
 
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
+footer {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
 }
 
-.gallery-item {
-    flex: 1 1 calc(33% - 20px);
-    box-sizing: border-box;
+/* Stili groza sadaļai */
+#cart {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
+#cart h2 {
+    margin-top: 0;
 }
 
-@media (max-width: 768px) {
-    .gallery-item {
-        flex: 1 1 calc(50% - 20px);
-    }
+#cart-list {
+    list-style-type: none;
+    padding: 0;
 }
 
-@media (max-width: 480px) {
-    .gallery-item {
-        flex: 1 1 100%;
-    }
+/* Stili produktu sadaļai */
+#products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
 }
+
+.product {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+.product button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.product button:hover {
+    background-color: #0056b3;
+}
+
+/* Stili maksājuma veidu sarakstam */
+#payment-methods {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
